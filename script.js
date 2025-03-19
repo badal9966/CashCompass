@@ -36,3 +36,8 @@ document.getElementById("search").addEventListener("keyup", function () {
         row.style.display = row.cells[1].textContent.toUpperCase().includes(filter) ? "" : "none";
     });
 });
+
+// Mobile Menu Toggle
+document.querySelector(".menu-toggle").addEventListener("click", () => {
+    document.querySelector("nav ul").classList.toggle("active");
+});
