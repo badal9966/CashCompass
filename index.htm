@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CashCompass</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="logo">CashCompass</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content Container -->
+      <div class="container">
+        <h1>Choose Your Currency</h1>
+        <form>
+          <label for="quantity">Choose Quantity:</label>
+          <input type="number" name="quantity" value="1" required />
+
+          <label for="currency">Choose Currency:</label>
+          <select name="currency">
+            <option value="INR">Indian Rupee</option>
+            <option value="USD">US Dollar</option>
+            <option value="EUR">Euro</option>
+          </select>
+
+          <input type="submit" value="Submit" class="btn" />
+        </form>
+
+        <div class="output">
+          <div class="table-header">
+            <h2>Converted Values</h2>
+            <input type="text" id="search" placeholder="Search by Code..." />
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Currency Code</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span id="year"></span> CashCompass. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Dynamically set the current year in the footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

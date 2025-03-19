@@ -1,0 +1,208 @@
+/* Define CSS Variables */
+:root {
+    --primary-color: #504b38;
+    --secondary-color: #ebe5c2;
+    --text-color: #ffffff;
+    --bg-light: rgba(255, 255, 255, 0.2);
+    --bg-medium: rgba(255, 255, 255, 0.5);
+    --bg-dark: rgba(255, 255, 255, 0.9);
+    --border-color: #ffffff;
+  }
+  
+  /* Reset default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    background: linear-gradient(
+      to right,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Wrapper for proper layout */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    background-color: var(--bg-dark);
+    font-family: "Roboto Mono", monospace;
+    display: flex;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  div.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* Navigation Menu */
+  nav ul {
+    display: flex;
+    margin-left: auto;
+  }
+  
+  nav ul li {
+    list-style: none;
+    padding: 0 15px;
+    position: relative; /* Needed for the underline effect */
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px; /* Space between text and underline */
+  }
+  
+  /* Underline effect */
+  nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Start from the middle */
+    bottom: 0;
+    width: 0%; /* Start with no underline */
+    height: 3px;
+    background: var(--secondary-color); /* Underline color */
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%); /* Center the underline from the middle */
+  }
+  
+  /* Expand underline on hover */
+  nav li a:hover::after {
+    width: 100%; /* Full width underline */
+  }
+  
+  /* Main Container */
+  .container {
+    min-height: 60vh;
+    width: 50%;
+    background: var(--bg-light);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+    padding: 40px;
+    margin: auto;
+    margin-top: 100px;
+  }
+  
+  /* Form Styling */
+  .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .container form input,
+  .container form select {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-medium);
+    color: var(--primary-color);
+  }
+  
+  /* Submit Button */
+  .container form .btn {
+    width: 50%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .container form .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background: var(--bg-dark);
+    padding: 15px;
+    width: 100%;
+    color: var(--primary-color);
+  }
+  
+  /* Table Styling */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  /* Search Box */
+  #search {
+    width: 150px;
+    padding: 6px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-medium);
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  #search:focus {
+    background: var(--bg-dark);
+  }
+  
+  /* Output Section */
+  .output {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Table */
+  .output table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .output th {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px;
+  }
+  
+  .output td {
+    padding: 8px;
+  }
+  
+  /* Alternating Table Row Colors */
+  .output tbody tr:nth-child(even) {
+    background: var(--bg-medium);
+  }
+  
